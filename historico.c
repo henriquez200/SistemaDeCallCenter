@@ -33,7 +33,7 @@ void empilharHistorico(HistNo** topo, Chamada* chamada, int tempoEspera) {
     novo->tempoEspera = tempoEspera;
     novo->prox = *topo;
 
-    *topo = novo; //configura novo nó, fazendo um last in first out
+    *topo = novo; //configura novo nó
 }
 
 HistNo* desempilharHistorico(HistNo** topo) {
