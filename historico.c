@@ -49,10 +49,10 @@ HistNo* desempilharHistorico(HistNo** topo) {
 }
 
 void exibirHistorico(HistNo* topo) {
-    printf("\n========== HISTÓRICO DE ATENDIMENTOS ==========\n");
+    printf("\n Histórico de Atendimentos: \n");
     
     if (historicoVazio(topo)) {
-        printf("[Nenhum atendimento realizado]\n\n");
+        printf("[Sem atendimentos realizados]\n\n");
         return;
     } //verificacao se ta vazio
 
