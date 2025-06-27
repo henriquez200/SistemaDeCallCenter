@@ -8,23 +8,27 @@
 #include "atendimento.h"
 #include "historico.h"
 
+// limpa o buffer do teclado
 void limparEntrada() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
 int main() {
+// inicializa as filas de prioridade
     Fila alta, media, baixa;
     InicializarFila(&alta);
     InicializarFila(&media);
     InicializarFila(&baixa);
 
+// inicializa estatisticas e historicos
     Estatisticas est;
     HistNo* historico;
 
     inicializarAtendimento(&est, &historico);
 
     int opcao;
+// mostra o menu por loop para não ficar fechando o sistema
     do {
         printf("========== MENU ==========\n");
         printf("1. Adicionar nova chamada\n");
@@ -38,6 +42,7 @@ int main() {
         limparEntrada();
 
         switch (opcao) {
+            // lê os dados da chamada
             case 1: {
                 DadosChamada dados;
                 printf("\nDigite o nome do cliente: ");
@@ -52,12 +57,14 @@ int main() {
                 scanf("%d", &dados.prioridade);
                 limparEntrada();
 
+                // insere na fila correta
                 InserirChamada(&alta, &media, &baixa, dados);
                 printf("\n✅ Chamada adicionada com sucesso!\n\n");
                 break;
             }
 
             case 2:
+            // mostra as chamadas em cada fila
                 ExibirFila(&alta, PRIORIDADE_ALTA);
                 ExibirFila(&media, PRIORIDADE_MEDIA);
                 ExibirFila(&baixa, PRIORIDADE_BAIXA);
@@ -65,16 +72,19 @@ int main() {
                 break;
 
             case 3:
+            // atende a proxima chamada com base na prioridade
                 atenderProximaChamada(&alta, &media, &baixa, &historico, &est);
                 break;
 
             case 4:
+            // exibe historico detalhado
                 exibirHistorico(historico);
                 break;
 
             case 5:
+            // gera relatorio e libera memória
                 gerarRelatorio(&est, historico);
-                liberarHistorico(&historico); // evita vazamento de memória
+                liberarHistorico(&historico); 
                 break;
 
             default:
