@@ -5,7 +5,7 @@
 #include <string.h>
 #include "historico.h"
 
-//a parte de historico trabalha muito com pilhas, já que a intuitividade é pegar o que está em cima(o mais novo), tipo uma pilha de pratos
+//a parte de historico trabalha muito com pilhas, já que a intuitividade é pegar o que está em cima(o mais novo)
 void inicializarHistorico(HistNo** topo) {
     *topo = NULL; //define o topo como nulo(vazio), o ponteiro duplo serve para alterar o valor do topo
 }
