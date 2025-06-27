@@ -1,5 +1,5 @@
 // historico.h
-// autoria de: paulo roberto gomes barroso schiochet
+// AUTOR: PAULO ROBERTO GOMES BARROSO SCHIOCHET 
 #ifndef HISTORICO_H
 #define HISTORICO_H
 

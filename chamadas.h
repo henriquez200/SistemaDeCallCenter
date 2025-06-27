@@ -1,6 +1,5 @@
 // chamadas.h
-
-//AUTOR: HENRIQUE MENESES DOS SANTOS CORRÊa
+// AUTOR: HENRIQUE MENESES DOS SANTOS CORRÊa
 #ifndef CHAMADAS_H
 #define CHAMADAS_H
 
@@ -26,7 +25,7 @@ typedef struct {
 } Fila;
 
 // inicializa uma fila definindo os ponteiros frente e tras como NULL, que significa que a fila esta vazia
-void inicializar_fila(Fila* fila);
+void InicializarFila(Fila* fila);
 
 // Criação de nova chamada
 typedef struct {

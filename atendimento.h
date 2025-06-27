@@ -1,16 +1,10 @@
 // atendimento.h
-// AUTOR: Thiago Tanaka Peczek
+// AUTOR: THIAGO TANAKA PECZEK
 #ifndef ATENDIMENTO_H
 #define ATENDIMENTO_H
 
 #include "chamadas.h"   // para usar Fila, Chamada, DadosChamada
-
-// Pilha de histórico
-typedef struct HistNo {
-    Chamada* chamada;
-    int tempoEspera;          // tempo de espera simulado
-    struct HistNo* prox;
-} HistNo;
+#include "historico.h"  // para usar HistNo e funções de histórico
 
 // estruturas para acumular estatísticas
 typedef struct {

@@ -1,5 +1,5 @@
 // historico.h
-// autoria de: Paulo Roberto Gomes Barroso Schiochet
+// AUTOR: PAULO ROBERTO GOMES BARROSO SCHIOCHET 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,14 +13,14 @@ void inicializarHistorico(HistNo** topo) {
 void empilharHistorico(HistNo** topo, Chamada* chamada, int tempoEspera) {
     HistNo* novo = (HistNo*)malloc(sizeof(HistNo)); //cria no p/ pilha, e uma medida de segurança caso nao tenha input
     if (!novo) {
-        printf("Erro: Nao foi possível alocar memoria para o historico!\n");
+        printf("Erro: Nao foi possivel alocar memoria para o historico!\n");
         return;
     }
 
     Chamada* chamadaCopia = (Chamada*)malloc(sizeof(Chamada));
     if (!chamadaCopia) { //faz uma alocacao p copia da chamada, e entao guarda uma copia no historico
         free(novo);
-        printf("Erro: Nao foi possível alocar memoria para a chamada!\n");
+        printf("Erro: Nao foi possivel alocar memoria para a chamada!\n");
         return;
     }
 
@@ -49,7 +49,7 @@ HistNo* desempilharHistorico(HistNo** topo) {
 }
 
 void exibirHistorico(HistNo* topo) {
-    printf("\n Histórico de Atendimentos: \n");
+    printf("\n Historico de Atendimentos: \n");
     
     if (historicoVazio(topo)) {
         printf("[Sem atendimentos realizados]\n\n");

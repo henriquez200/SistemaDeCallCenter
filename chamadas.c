@@ -1,8 +1,5 @@
-
-
-
 // chamadas.c
-//AUTOR: HENRIQUE MENESES DOS SANTOS CORREA
+// AUTOR: HENRIQUE MENESES DOS SANTOS CORREA
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -54,7 +51,7 @@ void ExibirFila(Fila* fila, int prioridade) {
     const char* desc;
     switch (prioridade) {
         case PRIORIDADE_ALTA: desc = "Alta"; break;
-        case PRIORIDADE_MEDIA: desc = "Média"; break;
+        case PRIORIDADE_MEDIA: desc = "Media"; break;
         case PRIORIDADE_BAIXA: desc = "Baixa"; break;
         default: desc = "Desconhecida";
     }

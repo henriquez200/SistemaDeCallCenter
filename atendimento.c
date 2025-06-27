@@ -1,5 +1,5 @@
 // atendimento.c
-// AUTOR: Thiago Tanaka Peczek
+// AUTOR: THIAGO TANAKA PECZEK
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -39,7 +39,7 @@ void inicializarAtendimento(Estatisticas* est, HistNo** topo) {
     est->countAlta = est->sumEsperaAlta = 0;
     est->countMedia = est->sumEsperaMedia = 0;
     est->countBaixa = est->sumEsperaBaixa = 0;
-    *topo = NULL;
+    inicializarHistorico(topo);
 
     srand((unsigned)time(NULL));
 }
@@ -61,11 +61,7 @@ void atenderProximaChamada(Fila* alta, Fila* media, Fila* baixa, HistNo** topo, 
     printf("\nAtendendo %s (prioridade %d). Tempo de espera simulado: %d minutos.\n\n", c->nome, c->prioridade, espera);
 
     // empilhar no histórico
-    HistNo* no = malloc(sizeof(HistNo));
-    no->chamada    = c;
-    no->tempoEspera= espera;
-    no->prox       = *topo;
-    *topo          = no;
+    empilharHistorico(topo, c, espera);
 
     // atualizar estatísticas
     switch (c->prioridade) {
