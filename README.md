@@ -53,3 +53,8 @@ gcc main.c chamadas.c atendimento.c historico.c -o atendimento
 
 🧹 Finalização
 Ao gerar o relatório final, o programa libera toda a memória alocada pelo histórico.
+
+---
+
+🔗 Link
+https://youtu.be/0n3NqngrfkY
